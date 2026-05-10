@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { Analytics } from '@vercel/analytics/react';
 import { 
   Coffee, 
   Utensils, 
@@ -637,6 +638,7 @@ const App = () => {
           </div>
         </div>
       </footer>
+      <Analytics />
     </div>
   );
 };
