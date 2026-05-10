@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #1A0D08;
+  --secondary: #FDFCF8;
+  --accent: #D4A373;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans antialiased overflow-x-hidden bg-secondary text-primary;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+.grain {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200%;
+  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+  background-repeat: repeat;
+  animation: bg-animation .2s infinite;
+  opacity: .05;
+  visibility: visible;
+  pointer-events: none;
+  z-index: 100;
+}
+
+@keyframes bg-animation {
+    0% { transform: translate(0,0) }
+    10% { transform: translate(-5%,-5%) }
+    20% { transform: translate(-10%,5%) }
+    30% { transform: translate(5%,-10%) }
+    40% { transform: translate(-5%,15%) }
+    50% { transform: translate(-10%,5%) }
+    60% { transform: translate(15%,0) }
+    70% { transform: translate(0,10%) }
+    80% { transform: translate(-15%,0) }
+    90% { transform: translate(10%,5%) }
+    100% { transform: translate(5%,0) }
+}
+
+.glass-nav {
+  @apply backdrop-blur-xl bg-primary/80 border-b border-white/5;
+}
+
+.section-divider {
+  @apply w-px h-24 bg-gradient-to-b from-transparent via-accent/30 to-transparent mx-auto my-12;
+}
+
+.hero-gradient {
+  background: linear-gradient(to bottom, rgba(26, 13, 8, 0.4), rgba(26, 13, 8, 0.8));
+}
