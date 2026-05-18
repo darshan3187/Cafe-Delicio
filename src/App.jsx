@@ -85,10 +85,10 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-primary-dark border-t border-white/10 overflow-hidden"
+            initial={{ opacity: 0, y: -15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            className="md:hidden bg-primary-dark border-t border-white/10"
           >
             <div className="flex flex-col p-6 space-y-4">
               {navLinks.map((link) => (
